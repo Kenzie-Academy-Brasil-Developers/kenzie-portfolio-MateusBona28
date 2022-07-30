@@ -1,3 +1,5 @@
+import { Card, CardActions, CardContent, Typography } from "@mui/material";
+
 // Styles
 import { Container } from "@/styles/Global";
 import { Text } from "@/styles/Text";
@@ -84,15 +86,8 @@ export const Home = (): JSX.Element => {
               </Button>
             </ProjectsAreaSocialMediaMessage>
             <ProjectsAreaContent>
-              <Text type="body1" color="grey2" css={{ marginBottom: "$2" }}>
+              <Text as="span" type="heading2">
                 Projetos
-              </Text>
-              <Text as="h3" type="heading2" color="grey1">
-                Originalidade e{" "}
-                <Text as="span" color="brand1" type="heading2">
-                  dedicação
-                </Text>{" "}
-                em cada detalhe
               </Text>
               <Project />
             </ProjectsAreaContent>

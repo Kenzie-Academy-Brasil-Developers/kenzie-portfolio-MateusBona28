@@ -10,6 +10,7 @@ import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
 import { userData } from "@/utils/userData";
+import { Link } from "@mui/material";
 
 interface ReposType {
   id: number;
@@ -26,12 +27,13 @@ export const Project = (): JSX.Element => {
   useEffect(() => {
     const fetchData = async () => {
       const data: Response = await fetch(
-        `https://api.github.com/users/${userData.githubUser}/repos`
+       // `https://api.github.com/${userData.githubUser}`
+       `https://api.github.com/repos/Kenzie-Academy-Brasil-Developers/api-kenziefood-m2-MateusBona28`
       )
 
       const json = await data.json();
 
-      setRepositories(json);
+      setRepositories([json]);
 
       if (!data.ok) {
         throw data;
@@ -45,7 +47,9 @@ export const Project = (): JSX.Element => {
   return (
     <>
       {repositories?.map((repository) => (
-        <ProjectWrapper key={repository.id}>
+        <a key={repository.id}
+        href="https://kenzie-academy-brasil-developers.github.io/api-kenziefood-m2-MateusBona28/" target="_blank" rel="noreferrer">
+        <ProjectWrapper >
           <Text
             as="h2"
             type="heading3"
@@ -80,6 +84,7 @@ export const Project = (): JSX.Element => {
             )}
           </ProjectLinks>
         </ProjectWrapper>
+        </a>
       ))}
     </>
   );
