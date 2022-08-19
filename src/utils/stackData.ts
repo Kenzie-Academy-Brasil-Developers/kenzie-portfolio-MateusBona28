@@ -34,6 +34,6 @@ export const stackData = [
     img: imgReact,
   },
   //{ title: "Vuejs", img: FaVuejs },
-  //{ title: "TypeScript", img: SiTypescript },
-  //{ title: "Docker", img: FaDocker },
+  { title: "TypeScript", img: SiTypescript },
+  { title: "Docker", img: FaDocker },
 ];
